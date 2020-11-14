@@ -1,19 +1,19 @@
-// DefiniÁ„o do tipo
-typedef struct DadosContacto Contacto;
+// Defini√ß√£o do tipo
+typedef struct DadosContacto contacto;
 typedef struct ListaContactos ListaTel;
 
-// CabeÁalho das funcıes
+// Cabe√ßalho das func√µes
 
 ListaTel* InicializaLista();
 
 bool ListaVazia(ListaTel* ptr);
 
-ListaTel* InserirContacto(ListaTel*ptr, contacto a);
+ListaTel* InserirContacto(ListaTel* ptr, contacto a);
 
-ListaTel* RetirarContacto(ListaTel*ptr, int B);
+ListaTel* RetirarContacto(ListaTel* ptr, int B);
 
-Contacto* SubstituirContacto(ListaTel*ptr);
+contacto* SubstituirContacto(ListaTel* ptr);
 
-Contacto* AtualizarComBaseNoNome(ListaTel*ptr,char C);
+contacto* AtualizarComBaseNoNome(ListaTel* ptr,char C);
 
-int retornacontacto(ListaTel*ptr,emp[]);
+int retornacontacto(ListaTel* ptr, char emp);
