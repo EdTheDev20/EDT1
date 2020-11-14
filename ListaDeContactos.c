@@ -18,7 +18,7 @@ char empresa;
 typedef struct ListaContactos{
 
 contacto* dados;
-struct DadosContacto* prox;
+struct ListaContactos*prox;
 } ListaTel;
 
 // Funções  
@@ -34,15 +34,16 @@ bool ListaVazia(ListaTel* ptr){
 
 ListaTel* InserirContacto(ListaTel* ptr, contacto a)
 {
-    ListaTel* NovoContacto = (ListaTel*)malloc(sizeof(ListaTel));
+    ListaTel* NovoContacto;
+	NovoContacto = (ListaTel*)malloc(sizeof(ListaTel));
 
     NovoContacto->dados->nome=a.nome;
-    NovoContacto->dados->nome=a.numerodetel;
-    NovoContacto->dados->nome=a.morada;
-    NovoContacto->dados->nome=a.email;
-    NovoContacto->dados->nome=a.empresa;
+    NovoContacto->dados->numerodetel=a.numerodetel;
+    NovoContacto->dados->morada=a.morada;
+    NovoContacto->dados->email=a.email;
+    NovoContacto->dados->empresa=a.empresa;
 
-    NovoContacto -> prox = ptr;
+    NovoContacto-> prox= ptr;
 
     return NovoContacto;
 }
@@ -52,17 +53,13 @@ ListaTel* RetirarContacto(ListaTel* ptr, int B){
 }
 
 
-
-
 // forma recursiva
 
 int retornacontacto(ListaTel* ptr,char emp){
-	if(ptr=NULL)
-	return 0;
-	if(strcup(ptr-> dados->empresa,emp)==0){
+	if(ptr=NULL){
+	return 0;}
+	if(strcmp(ptr->dados->empresa,emp)==0){
 		return 1+ retornacontacto(ptr->prox,emp);
 		}
 		else return 0+retornacontacto(ptr->prox, emp);
 }
-
-
